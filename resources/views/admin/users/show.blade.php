@@ -10,9 +10,15 @@
 
     <x-alerts/>
 
-    <form action="{{ route('users.destroy', $user->id) }}" method="post">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Deletar</button>
-    </form>
+    {{-- @can('owner', $user)
+        <h1>Pode editar</h1>
+    @endcan --}}
+
+    @can('is-admin')
+        <form action="{{ route('users.destroy', $user->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Deletar</button>
+        </form>
+    @endcan
 @endsection

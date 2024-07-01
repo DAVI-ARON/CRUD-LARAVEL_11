@@ -12,9 +12,12 @@
     <!-- Styles -->
     @livewireStyles
 </head>
-<body>
+<body class="bg-gray-100">
 
-    @yield('content')
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        @yield('content')
+    </div>
 
+    @livewireScripts
 </body>
 </html>
